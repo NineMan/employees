@@ -85,11 +85,24 @@ pass
 python app/main.py
 ```
 
-#### Запуск через Docker (не реализовано)
+#### Запуск через docker-compose
 
-Необходимо иметь установленные ``docker`` и ``docker-compose``
+0. Необходимо иметь установленные ``docker`` и ``docker-compose``
+
+1. Запустить docker-compose:
+
+```docker-compose up -d --build```
 
 ### Вспомогательные команды для разработки:
+
+Остановить докер после работы приложение:
+
+```docker-compose ps``` список всех контейнеров
+```
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                      NAMES
+b49684336c81   mongo     "docker-entrypoint.s…"   7 seconds ago   Up 6 seconds   0.0.0.0:27017->27017/tcp   sad_galois
+```
+```docker-compose down``` остановить контейнеры
 
 Форматирование кода инструментом black (не забывать про ручной перенос строк)
 
@@ -99,5 +112,4 @@ python -m black --line-length 79 app/
 
 #### ToDo
 
-1) Указывать файл для загрузки
-2) Добавить тесты
+1) Добавить тесты
