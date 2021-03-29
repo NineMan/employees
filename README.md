@@ -43,7 +43,8 @@
 
 Также реализованы методы POST, GET, PUT, DELETE для одного сотрудника
 
-Все реализованные маршруты можно посмотреть здесь ``/docs`` или здесь ``/redoc``.
+Все реализованные маршруты можно посмотреть здесь ``http://0.0.0.0:8000/docs`` 
+или здесь ``http://0.0.0.0:8000/redoc``.
 
 [/docs](http://127.0.0.1:8000/docs)
 
@@ -89,19 +90,25 @@ python app/main.py
 
 0. Необходимо иметь установленные ``docker`` и ``docker-compose``
 
-1. Запустить docker-compose:
+1. Скопировать себе репозитарий
 
-```docker-compose up -d --build```
+```python
+git clone https://github.com/NineMan/employees.git
+```
+
+2. Запустить docker-compose:
+
+```
+cd employees
+docker-compose up -d --build
+```
 
 ### Вспомогательные команды для разработки:
 
 Остановить докер после работы приложение:
 
 ```docker-compose ps``` список всех контейнеров
-```
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                      NAMES
-b49684336c81   mongo     "docker-entrypoint.s…"   7 seconds ago   Up 6 seconds   0.0.0.0:27017->27017/tcp   sad_galois
-```
+
 ```docker-compose down``` остановить контейнеры
 
 Форматирование кода инструментом black (не забывать про ручной перенос строк)
