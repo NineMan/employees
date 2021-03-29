@@ -2,16 +2,13 @@ from bson.objectid import ObjectId
 import motor.motor_asyncio
 
 
-MONGO_DETAIL = "mongodb://localhost:27017"
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb", 27017)
 
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAIL)
+database = client.employees
 
-database_e = client.employees
-
-employees_collection = database_e.get_collection("employees_collection")
+employees_collection = database.get_collection("employees_collection")
 
 
-# helpers
 def employee_helper(employee) -> dict:
     return {
         "id": str(employee["_id"]),
