@@ -49,7 +49,7 @@ class UpdateEmployeeModel(BaseModel):
                 "join_date": "2010-10-10T18:18:10-08:00",
                 "job_title": "employee",
                 "gender": "male",
-                "salary": 5000
+                "salary": 5000,
             }
         }
 

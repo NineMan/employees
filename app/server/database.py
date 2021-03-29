@@ -37,7 +37,9 @@ async def retrieve_all_employees() -> list:
 # Добавить нового сотрудника в базу данных
 async def add_employee(employee_data: dict) -> dict:
     employee = await employees_collection.insert_one(employee_data)
-    new_employee = await employees_collection.find_one({"_id": employee.inserted_id})
+    new_employee = await employees_collection.find_one(
+        {"_id": employee.inserted_id}
+    )
     return employee_helper(new_employee)
 
 
@@ -57,8 +59,7 @@ async def update_employee(id: str, data: dict) -> bool:
     print(employee)
     if employee:
         updated_employee = await employees_collection.update_one(
-            {"_id": ObjectId(id)},
-            {"$set": data}
+            {"_id": ObjectId(id)}, {"$set": data}
         )
         if updated_employee:
             return True
@@ -110,10 +111,14 @@ async def retrieve_employees_by_salary(salary: int, direction: bool) -> list:
     employees = []
 
     if direction:
-        async for employee in employees_collection.find({"salary": {"$gte": salary}}):
+        async for employee in employees_collection.find(
+            {"salary": {"$gte": salary}}
+        ):
             employees.append(employee_helper(employee))
     else:
-        async for employee in employees_collection.find({"salary": {"$lte": salary}}):
+        async for employee in employees_collection.find(
+            {"salary": {"$lte": salary}}
+        ):
             employees.append(employee_helper(employee))
 
     return employees

@@ -1,4 +1,3 @@
-.. 
 <a href="https://github.com/psf/black">
 <img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 
@@ -15,7 +14,8 @@
 Плюсом будет использование Docker, покрытие тестами.
 
 
-#### Быстрый старт
+Быстрый старт
+---------------
 
 1 Установить виртуальное окружение и запустить его
 
@@ -55,17 +55,20 @@ python app/main.py
 
 #### Маршруты
 
-All routes are available on ``/docs`` or ``/redoc`` paths with Swagger or ReDoc.
-Все маршруты можно посмотреть: ``/docs`` или ``/redoc``.
+Все маршруты можно посмотреть здесь ``/docs`` или здесь ``/redoc``.
 
-http://127.0.0.1:8000/docs
-[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-http://127.0.0.1:8000/docs
+[/docs](http://127.0.0.1:8000/docs)
+
+[/redoc](http://127.0.0.1:8000/redoc)
+
 
 #### Вспомогательные команды для разработки:
 
-   # Форматирование кода инструментом black (не забывать про ручной перенос строк)
-   python -m black --line-length 79 app/
+Форматирование кода инструментом black (не забывать про ручной перенос строк)
+
+```python
+python -m black --line-length 79 app/
+```
 
 #### ToDo
 
