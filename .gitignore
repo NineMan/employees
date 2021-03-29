@@ -48,3 +48,4 @@ venv.bak/
 .idea/
 
 # Debug/personal for this app
+mongo-seed/employees_short.json
