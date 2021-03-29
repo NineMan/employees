@@ -48,4 +48,4 @@ venv.bak/
 .idea/
 
 # Debug/personal for this app
-employees_short.json
+load_db.py
