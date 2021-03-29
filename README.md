@@ -22,7 +22,7 @@
 2 Скопировать себе репозитарий
 
 ```python
-https://github.com/NineMan/employees.git
+git clone https://github.com/NineMan/employees.git
 ```
 
 3 Установить зависимости
